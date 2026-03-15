@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "ShOS - Shell & Operating System",
+      "description": "Built an educational operating system from scratch featuring a protected-mode kernel, custom bootloader, VGA text mode display, PS/2 keyboard driver, and shell with 20+ built-in commands including memory management routines (segmentation/paging).",
+      "tech": ["C", "Assembly (NASM)", "QEMU"],
+      "github": "https://github.com/Sidharth-Prabhu/ShOS-Shell-Operating-System",
+      "demo": null
+    },
+    {
+      "id": 2,
+      "title": "Vaultlyn Vault - Symmetric Encryption",
+      "description": "CLI encryption tool for secure offline file storage. Features include nominee login, cross-platform support, and robust symmetric key encryption for enhanced privacy with decentralized bare-metal encryption.",
+      "tech": ["Python", "Cryptography", "Bash", "Batch"],
+      "github": "https://github.com/Sidharth-Prabhu",
+      "demo": "https://vaultlyn.frissco.net/"
+    },
+    {
+      "id": 3,
+      "title": "Campora OSS - Institution Management",
+      "description": "Developed a comprehensive software bundle for educational institutions, integrating academic, administrative, and campus management into a unified platform with a modular and scalable architecture.",
+      "tech": ["JavaScript", "Dart", "C++"],
+      "github": "https://github.com/Campora-OSS",
+      "demo": null
+    },
+    {
+      "id": 4,
+      "title": "Moves - Medicine Delivery Service",
+      "description": "Full-stack quick-commerce medicine delivery application with searchable catalog, cart system, and admin dashboard. Selected as a finalist in Infosys TechZooka Innovation Summit Hackathon 2024.",
+      "tech": ["Node.js", "Express", "MongoDB"],
+      "github": "https://github.com/Sidharth-Prabhu",
+      "demo": null
+    }
+  ]
+}

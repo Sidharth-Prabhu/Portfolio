@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563eb;
+  --color-background: #f8fafc;
+  --color-text-main: #0f172a;
+
+  --color-dark-primary: #3b82f6;
+  --color-dark-background: #0b0f19;
+  --color-dark-text-main: #e2e8f0;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark-background text-dark-text-main;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .dark .glass {
+    @apply bg-black/50 backdrop-blur-md border border-white/10;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.05;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
