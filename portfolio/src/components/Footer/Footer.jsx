@@ -28,8 +28,11 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center gap-4 border-t border-black/5 dark:border-white/5 w-full pt-12">
-          <p className="text-sm font-bold opacity-40 uppercase tracking-[0.2em] text-black dark:text-white">
+          <p className="text-sm font-bold opacity-40 uppercase tracking-[0.2em] text-black dark:text-white flex items-center gap-3">
             &copy; 2026 Sidharth P L • All Rights Reserved
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 opacity-60">
+              v1.0-beta
+            </span>
           </p>
         </div>
 

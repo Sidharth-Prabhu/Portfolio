@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import { Github, ExternalLink, Code, BookOpen } from 'lucide-react';
 import projectsData from '../../data/projects.json';
 
 const Projects = () => {
@@ -87,6 +87,17 @@ const Projects = () => {
                     >
                       <ExternalLink size={18} />
                       Live Demo
+                    </motion.a>
+                  )}
+                  {project.blog && (
+                    <motion.a
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={project.blog}
+                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl bg-purple-500 text-white font-bold text-sm md:text-base shadow-lg shadow-purple-500/20 hover:bg-purple-500/90 transition-all"
+                    >
+                      <BookOpen size={18} />
+                      Read Blog
                     </motion.a>
                   )}
                 </div>

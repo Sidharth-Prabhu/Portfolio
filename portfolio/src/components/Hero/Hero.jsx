@@ -56,8 +56,11 @@ function build(idea) {
           animate="visible"
           className="flex flex-col justify-center space-y-6"
         >
-          <motion.div variants={itemVariants} className="space-y-2">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+          <motion.div variants={itemVariants} className="space-y-4">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
+              Portfolio v1.0 (Beta)
+            </span>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black dark:text-white">
               Sidharth <span className="text-primary dark:text-dark-primary">P L</span>
             </h1>
             <p className="text-xl md:text-2xl font-medium text-black/60 dark:text-white/60">

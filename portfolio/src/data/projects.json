@@ -6,15 +6,16 @@
       "description": "Built an educational operating system from scratch featuring a protected-mode kernel, custom bootloader, VGA text mode display, PS/2 keyboard driver, and shell with 20+ built-in commands including memory management routines (segmentation/paging).",
       "tech": ["C", "Assembly (NASM)", "QEMU"],
       "github": "https://github.com/Sidharth-Prabhu/ShOS-Shell-Operating-System",
-      "demo": null
+      "demo": "#shos"
     },
     {
       "id": 2,
-      "title": "Vaultlyn Vault - Symmetric Encryption",
-      "description": "CLI encryption tool for secure offline file storage. Features include nominee login, cross-platform support, and robust symmetric key encryption for enhanced privacy with decentralized bare-metal encryption.",
-      "tech": ["Python", "Cryptography", "Bash", "Batch"],
+      "title": "opSync - Real-Time Collaborative Editor",
+      "description": "Full-stack real-time collaborative document editor with CRDTs (Yjs), WebSockets, live cursor tracking, version history rollback, role-based access control, and integrated chat functionality.",
+      "tech": ["React", "Node.js", "Socket.io", "MongoDB", "Yjs", "Zustand"],
       "github": "https://github.com/Sidharth-Prabhu",
-      "demo": "https://vaultlyn.frissco.net/"
+      "blog": "#blog/opsync-explained",
+      "demo": null
     },
     {
       "id": 3,
