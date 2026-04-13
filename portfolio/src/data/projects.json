@@ -1,10 +1,19 @@
 {
   "projects": [
     {
+      "id": 5,
+      "title": "ScopeIntel - Attack Surface Management",
+      "description": "High-performance Attack Surface Management (ASM) platform designed to automate external asset discovery, infrastructure mapping, and proactive threat analysis using parallelized recon engines.",
+      "tech": ["Featured", "Python", "FastAPI", "React", "PostgreSQL", "D3.js"],
+      "github": "https://github.com/Sidharth-Prabhu/ScopeIntel",
+      "blog": "#blog/scopeintel",
+      "demo": null
+    },
+    {
       "id": 1,
       "title": "ShOS - Shell & Operating System",
       "description": "Built an educational operating system from scratch featuring a protected-mode kernel, custom bootloader, VGA text mode display, PS/2 keyboard driver, and shell with 20+ built-in commands including memory management routines (segmentation/paging).",
-      "tech": ["C", "Assembly (NASM)", "QEMU"],
+      "tech": ["Featured", "C", "Assembly (NASM)", "QEMU"],
       "github": "https://github.com/Sidharth-Prabhu/ShOS-Shell-Operating-System",
       "demo": "#shos"
     },
