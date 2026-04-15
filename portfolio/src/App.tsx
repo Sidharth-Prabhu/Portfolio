@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   if (hash === '#shos') {
-    return <ShOS onClose={() => window.location.hash = ''} />;
+    return <ShOS onClose={() => window.location.assign('#')} />;
   }
 
   if (hash === '#blog' || hash.startsWith('#blog/')) {

@@ -10,73 +10,47 @@ import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-const BreathingBackground = () => {
-  const dots = [];
-  const rows = 15;
-  const cols = 15;
-
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      const dist = Math.sqrt(Math.pow(i - rows / 2, 2) + Math.pow(j - cols / 2, 2));
-      dots.push({ i, j, delay: dist * 0.15 });
-    }
-  }
-
-  return (
-    <div className="fixed inset-0 -z-20 overflow-hidden pointer-events-none opacity-40 dark:opacity-20">
-      <div 
-        className="absolute inset-0 grid gap-6 justify-center items-center"
-        style={{ 
-          gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-          gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))` 
-        }}
-      >
-        {dots.map((dot, idx) => (
-          <div
-            key={idx}
-            className="w-1 h-1 rounded-full bg-primary mx-auto animate-breathe"
-            style={{
-              animationDelay: `${dot.delay}s`
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const Home = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 50,
+    stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
 
   return (
-    <div className="relative overflow-x-hidden selection:bg-primary/30 min-h-screen">
+    <div className="relative overflow-x-hidden selection:bg-primary/30 min-h-screen bg-background text-text-main transition-colors">
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[200] origin-left"
         style={{ scaleX }}
       />
       
-      <BreathingBackground />
-      
-      {/* Background Glow */}
+      {/* Premium Background Elements */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full animate-pulse-glow" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[150px] rounded-full animate-pulse-glow" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/5 blur-[120px] rounded-full animate-float" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent/5 blur-[150px] rounded-full animate-float" style={{ animationDelay: '3s' }} />
+        
+        {/* Subtle Noise Texture */}
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none mix-blend-overlay" 
+             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}>
+        </div>
       </div>
 
       <Navbar />
-      <main className="relative z-10">
+      <main className="relative z-10 space-y-0">
         <Hero />
-        <About />
+        <div className="bg-surface">
+          <About />
+        </div>
         <Skills />
-        <Education />
+        <div className="bg-surface">
+          <Education />
+        </div>
         <Projects />
-        <Experience />
+        <div className="bg-surface">
+          <Experience />
+        </div>
         <Achievements />
         <Contact />
       </main>

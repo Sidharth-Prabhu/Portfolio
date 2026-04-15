@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { Briefcase, ArrowUpRight } from 'lucide-react';
 
 const experiences = [
   {
@@ -20,54 +20,70 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-4 bg-background dark:bg-dark-background">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold mb-20 relative text-black dark:text-white after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mt-4 after:mx-auto"
-        >
-          Work <span className="text-primary dark:text-dark-primary">Experience</span>
-        </motion.h2>
+    <section id="experience" className="py-32 px-6 md:px-12 bg-background">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-32">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <p className="text-[13px] font-black tracking-[0.4em] text-accent uppercase">
+              PROFESSIONAL
+            </p>
+            <h2 className="text-7xl md:text-9xl font-black leading-none tracking-tighter uppercase whitespace-pre-line">
+              HISTORY
+            </h2>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="max-w-md"
+          >
+            <p className="text-xl md:text-2xl font-medium text-text-muted italic leading-relaxed">
+              "A timeline of building digital ventures and custom software solutions."
+            </p>
+          </motion.div>
+        </div>
 
-        <div className="relative w-full border-l-2 border-primary/20 ml-4 md:ml-0 space-y-12 pb-8">
+        <div className="grid grid-cols-1 gap-12">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative pl-12 group"
+              transition={{ delay: index * 0.1 }}
+              className="group asym-rounded border-2 border-primary p-10 md:p-16 flex flex-col md:flex-row gap-12 items-start hover:bg-primary hover:text-background transition-all duration-700 overflow-hidden relative"
             >
-              <div className="absolute top-0 -left-[11px] w-5 h-5 rounded-full bg-primary border-4 border-white dark:border-dark-background shadow-lg shadow-primary/20 group-hover:scale-125 transition-transform duration-300 z-10" />
-              
-              <div className="glass p-8 rounded-3xl shadow-md group-hover:shadow-xl transition-all duration-300 border border-black/5 dark:border-white/5 relative after:content-[''] after:absolute after:top-2 after:-left-3 after:w-6 after:h-6 after:bg-inherit after:rotate-45 after:border-l after:border-b after:border-black/5 dark:after:border-white/5 overflow-hidden break-words">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-4">
-                  <div>
-                    <h3 className="text-2xl font-bold flex items-center gap-3 text-black dark:text-white">
-                      <Briefcase size={20} className="text-primary" />
-                      {exp.role}
-                    </h3>
-                    <p className="text-lg font-semibold text-primary/80 dark:text-dark-primary/80 mt-1">
-                      {exp.company}
+              <div className="md:w-1/3 space-y-4">
+                 <div className="text-sm font-black tracking-[0.3em] uppercase opacity-40 italic">{exp.duration}</div>
+                 <h3 className="text-5xl md:text-7xl font-black leading-none tracking-tighter uppercase group-hover:text-accent transition-colors">
+                    {exp.role}
+                 </h3>
+              </div>
+
+              <div className="md:w-2/3 space-y-10">
+                 <div className="space-y-4">
+                    <p className="text-2xl font-black tracking-tight uppercase opacity-60">
+                       {exp.company}
                     </p>
-                  </div>
-                  <div className="flex flex-col gap-2 text-sm font-medium opacity-60 text-black dark:text-white">
-                    <span className="flex items-center gap-2">
-                      <Calendar size={16} />
-                      {exp.duration}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <MapPin size={16} />
-                      {exp.location}
-                    </span>
-                  </div>
-                </div>
-                <p className="opacity-80 leading-relaxed text-lg italic text-black dark:text-white">
-                  "{exp.description}"
-                </p>
+                    <p className="text-xl md:text-2xl font-medium leading-relaxed max-w-2xl opacity-80 group-hover:opacity-100 transition-opacity">
+                       {exp.description}
+                    </p>
+                 </div>
+                 
+                 <div className="flex items-center gap-6">
+                    <div className="h-0.5 w-16 bg-accent" />
+                    <span className="text-[10px] font-black tracking-[0.3em] uppercase opacity-40">{exp.location}</span>
+                 </div>
+              </div>
+
+              <div className="absolute top-10 right-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                 <ArrowUpRight size={48} className="text-accent" />
               </div>
             </motion.div>
           ))}

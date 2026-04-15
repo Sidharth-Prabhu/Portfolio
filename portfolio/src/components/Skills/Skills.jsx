@@ -1,70 +1,68 @@
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 import skillsData from '../../data/skills.json';
-import { Code2, Terminal, Hammer, Cpu } from 'lucide-react';
-
-const categoryIcons = {
-  "Programming": <Code2 size={24} />,
-  "Frameworks": <Terminal size={24} />,
-  "Tools": <Hammer size={24} />,
-  "Technologies": <Cpu size={24} />
-};
 
 const Skills = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 10 },
-    visible: { opacity: 1, scale: 1, y: 0 }
+  const serviceNames = {
+    "Programming": "SOFTWARE ARCHITECTURE",
+    "Frameworks": "WEB DEVELOPMENT",
+    "Databases": "DATA ENGINEERING",
+    "Tools & Others": "CLOUD SOLUTIONS"
   };
 
   return (
-    <section id="skills" className="py-24 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold mb-20 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mt-4 after:mx-auto"
-        >
-          My <span className="text-primary dark:text-dark-primary">Skills</span>
-        </motion.h2>
+    <section id="skills" className="py-32 px-6 md:px-12 bg-background">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <p className="text-[13px] font-black tracking-[0.4em] text-accent uppercase">
+              CAPABILITIES
+            </p>
+            <h2 className="text-7xl md:text-[8rem] font-black leading-none tracking-tighter uppercase whitespace-pre-line">
+              OUR<br />SERVICES
+            </h2>
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-          {skillsData.categories.map((category, catIdx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {skillsData.categories.map((category, idx) => (
             <motion.div
-              key={catIdx}
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              transition={{ delay: idx * 0.1 }}
+              className={`p-10 md:p-16 asym-rounded border-2 transition-all duration-500 hover:-translate-y-2 group flex flex-col justify-between min-h-[400px] ${
+                idx % 3 === 1 
+                  ? 'bg-accent text-background border-accent' 
+                  : 'bg-transparent text-text-main border-primary hover:bg-primary hover:text-background'
+              }`}
             >
-              <div className="flex items-center gap-3 text-primary dark:text-dark-primary mb-6">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  {categoryIcons[category.name] || <Code2 size={24} />}
+              <div className="space-y-10">
+                <div className="flex justify-between items-start">
+                   <div className="text-sm font-black tracking-[0.3em] uppercase opacity-40">0{idx + 1}</div>
+                   <ArrowUpRight size={32} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <h3 className="text-xl font-bold">{category.name}</h3>
+                
+                <h3 className="text-4xl md:text-6xl font-black leading-none tracking-tighter uppercase">
+                  {serviceNames[category.name] || category.name.toUpperCase()}
+                </h3>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                {category.skills.map((skill, skillIdx) => (
-                  <motion.div
-                    key={skillIdx}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="p-3 glass rounded-xl text-center font-medium shadow-sm hover:shadow-md transition-all cursor-default border border-black/5 dark:border-white/5 hover:bg-primary/5 dark:hover:bg-primary/10 overflow-hidden break-words"
-                  >
-                    {skill}
-                  </motion.div>
-                ))}
+              <div className="space-y-6">
+                 <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    {category.skills.map((skill, sIdx) => (
+                      <span key={sIdx} className="text-[10px] font-black tracking-[0.2em] uppercase opacity-60">
+                         {skill}
+                      </span>
+                    ))}
+                 </div>
+                 <div className="h-1 w-20 bg-current opacity-40" />
               </div>
             </motion.div>
           ))}

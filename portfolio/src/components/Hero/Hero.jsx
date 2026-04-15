@@ -1,125 +1,96 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Download, Code } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import profileImg from '../../assets/images/my_profile_transparent.png';
+import Atom from './Atom';
 
 const Hero = () => {
-  const [tagline, setTagline] = useState('');
-  const fullTagline = "B.Tech AI & Data Science Student | Founder @ Frissco Digital Ventures";
-  const [index, setIndex] = useState(0);
+  const stats = [
+    { label: 'PROJECTS COMPLETED', value: '+30' },
+    { label: 'CLIENTS WORLDWIDE', value: '+15' },
+    { label: 'YEARS EXPERIENCE', value: '+3' },
+  ];
 
-  useEffect(() => {
-    if (index < fullTagline.length) {
-      const timeout = setTimeout(() => {
-        setTagline(prev => prev + fullTagline[index]);
-        setIndex(prev => prev + 1);
-      }, 50);
-      return () => clearTimeout(timeout);
-    }
-  }, [index]);
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const codeBlock = `
-const developer = {
-  name: "Sidharth P L",
-  role: "AI & Data Science Student",
-  expertise: ["Java", "Python", "Full Stack"],
-  venture: "Frissco Digital Ventures"
-};
-
-function build(idea) {
-  return idea.toReality();
-}
-`;
+  const socialLinks = ['YT', 'IG', 'FB', 'X'];
 
   return (
-    <section id="home" className="min-h-screen pt-20 flex items-center px-4 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 w-full relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col justify-center space-y-6"
-        >
-          <motion.div variants={itemVariants} className="space-y-4">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest border border-primary/20">
-              Portfolio v1.0 (Beta)
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black dark:text-white">
-              Sidharth <span className="text-primary dark:text-dark-primary">P L</span>
-            </h1>
-            <p className="text-xl md:text-2xl font-medium text-black/60 dark:text-white/60">
-              Founder & Software Developer
-            </p>
-          </motion.div>
+    <section id="home" className="pt-40 pb-20 px-6 md:px-12 bg-background min-h-[90vh] flex items-center">
+      <div className="max-w-[1400px] mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
-          <motion.div variants={itemVariants} className="h-12">
-            <p className="text-lg md:text-xl font-mono opacity-80 leading-relaxed border-r-2 border-primary animate-pulse inline-block">
-              {tagline}
-            </p>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
-            <a
-              href="#projects"
-              className="px-8 py-3 rounded-full bg-primary text-white font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl active:scale-95"
+          {/* Left Content */}
+          <div className="lg:col-span-7 flex flex-col justify-center space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-8"
             >
-              <Code size={20} />
-              View Projects
-            </a>
-            <a
-              href="/resume.pdf"
-              className="px-8 py-3 rounded-full bg-black/5 dark:bg-white/5 font-semibold flex items-center gap-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all border border-black/10 dark:border-white/10 active:scale-95"
-            >
-              <Download size={20} />
-              Download Resume
-            </a>
-          </motion.div>
-        </motion.div>
+              <h1 className="text-[14vw] lg:text-[10rem] font-black leading-[0.85] tracking-tighter text-text-main">
+                SIDHARTH<br />P L
+              </h1>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="hidden md:flex items-center justify-center relative"
-        >
-          <div className="w-full h-[400px] bg-slate-950 rounded-2xl overflow-hidden p-4 shadow-2xl relative z-10 border border-white/5">
-            <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-2">
-              <div className="w-3 h-3 rounded-full bg-red-400"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-              <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              <div className="ml-2 text-xs font-mono text-white/40">portfolio.js</div>
-            </div>
-            <pre className="font-mono text-sm md:text-base leading-relaxed overflow-x-auto text-slate-300">
-              <code className="text-slate-300">{codeBlock}</code>
-            </pre>
+              <div className="max-w-md space-y-6">
+                <p className="text-xl md:text-2xl font-medium text-text-muted leading-relaxed">
+                  Welcome to a visual journey that transcends time and space. Discover the artistry of moments.
+                </p>
+
+                <div className="flex gap-4">
+                  {socialLinks.map((link) => (
+                    <div key={link} className="w-12 h-12 rounded-full border border-text-main/10 flex items-center justify-center font-black text-xs hover:bg-text-main hover:text-background transition-all cursor-pointer">
+                      {link}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Stats Row */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-12 pt-8 border-t border-text-main/5">
+                {stats.slice(0, 2).map((stat, i) => (
+                  <div key={i} className="space-y-2">
+                    <h3 className="text-5xl md:text-6xl font-black tracking-tighter">{stat.value}</h3>
+                    <p className="text-[10px] font-black tracking-[0.2em] opacity-60 uppercase max-w-[120px] leading-tight">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
-          {/* Animated background shape */}
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-              borderRadius: ["20%", "50%", "20%"]
-            }}
-            transition={{ duration: 20, repeat: Infinity }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 blur-3xl -z-0 rounded-full"
-          />
-        </motion.div>
+
+          {/* Right Content / Featured Image */}
+          <div className="lg:col-span-5 relative w-full flex justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full aspect-[4/5] max-w-[500px]"
+            >
+              {/* Asymmetrical Shape Background */}
+              <div className="absolute inset-0 bg-surface asym-rounded scale-[1.05] translate-x-4 translate-y-4 border border-text-main/5" />
+
+              {/* Main Image Container */}
+              <div className="absolute inset-0 bg-accent overflow-hidden asym-rounded border border-text-main/5 shadow-2xl">
+                <img
+                  src={profileImg}
+                  alt="Sidharth P L"
+                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 hover:scale-105"
+                />
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute top-12 -right-6 w-16 h-16 rounded-full bg-text-main text-background flex items-center justify-center shadow-xl z-10 animate-bounce">
+                <div className="w-8 h-8 rounded-full border-2 border-background flex items-center justify-center">
+                  <div className="w-full h-full rounded-full bg-background opacity-20" />
+                </div>
+              </div>
+
+              <div className="absolute -bottom-6 left-1/4 w-16 h-16 rounded-full bg-text-main text-background flex items-center justify-center shadow-2xl z-10 hover:scale-110 transition-transform cursor-pointer">
+                <ArrowUpRight size={32} />
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

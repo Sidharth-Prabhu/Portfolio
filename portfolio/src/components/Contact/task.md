@@ -1,0 +1,15 @@
+- [x] Add theme initialization script to `index.html`
+- [x] Refactor `index.css` with unified CSS variables
+- [x] Update `Navbar.jsx` theme toggle logic
+- [x] Component Audit & Fixes:
+    - [x] `Hero.jsx`
+    - [x] `About.jsx`
+    - [x] `Projects.jsx`
+    - [x] `Skills.jsx`
+    - [x] `Experience.jsx`
+    - [x] `Education.jsx`
+    - [x] `BlogIndex.tsx`
+    - [x] `Footer.jsx`
+    - [x] `Achievements.jsx`
+    - [x] `Contact.jsx`
+- [x] Verify FOUC prevention and theme consistency

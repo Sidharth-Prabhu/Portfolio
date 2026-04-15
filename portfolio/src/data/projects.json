@@ -3,6 +3,7 @@
     {
       "id": 5,
       "title": "ScopeIntel - Attack Surface Management",
+      "image": "https://github.com/Sidharth-Prabhu/ScopeIntel/raw/main/screenshots/screenshot2.jpeg",
       "description": "High-performance Attack Surface Management (ASM) platform designed to automate external asset discovery, infrastructure mapping, and proactive threat analysis using parallelized recon engines.",
       "tech": ["Featured", "Python", "FastAPI", "React", "PostgreSQL", "D3.js"],
       "github": "https://github.com/Sidharth-Prabhu/ScopeIntel",
@@ -32,6 +33,7 @@
       "description": "Developed a comprehensive software bundle for educational institutions, integrating academic, administrative, and campus management into a unified platform with a modular and scalable architecture.",
       "tech": ["JavaScript", "Dart", "C++"],
       "github": "https://github.com/Campora-OSS",
+      "blog": "#blog/campora-redesign",
       "demo": null
     },
     {
