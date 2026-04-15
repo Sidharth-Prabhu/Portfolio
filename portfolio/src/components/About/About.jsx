@@ -127,7 +127,7 @@ const About = () => {
                           {/* Logo with Enhanced Visibility - Forced White for Dark Background */}
                           <div className="relative z-10 h-full flex items-center justify-center">
                             <img 
-                              src="/src/assets/images/frissco_logo.png" 
+                              src="/images/frissco_logo.png" 
                               alt="FRISSCO Logo" 
                               className="h-36 md:h-56 object-contain brightness-0 invert group-hover:scale-105 transition-transform duration-1000 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
                             />
@@ -170,7 +170,7 @@ const About = () => {
                                       {/* Decorative Stamp Ring */}
                                       <div className="absolute inset-[-20%] border-2 border-dashed border-accent/20 rounded-full animate-[spin_20s_linear_infinite] group-hover:border-accent/40 transition-colors" />
                                       <img 
-                                        src={isDark ? "/src/assets/images/msme_logo_white.png" : "/src/assets/images/msme_logo.png"} 
+                                        src={isDark ? "/images/msme_logo_white.png" : "/images/msme_logo.png"} 
                                         alt="MSME Logo" 
                                         className="h-28 md:h-36 object-contain transition-all duration-1000 group-hover:scale-110" 
                                       />

@@ -4,7 +4,7 @@ import { GraduationCap, Award } from 'lucide-react';
 const educationList = [
    {
       institution: "Rajalakshmi Institute of Technology",
-      logo: "/src/assets/images/RIT_Logo.png",
+      logo: "/images/RIT_Logo.png",
       degree: "B.Tech in Artificial Intelligence & Data Science",
       duration: "2024 – 2028 (Expected)",
       description: "Focusing on Artificial Intelligence, Data Science, and Full Stack Development. Gaining hands-on experience in building scalable and intelligent software solutions.",
