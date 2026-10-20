@@ -1,0 +1,21 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="10" fill="url(#subtle_grad)" fill-opacity="0.12"/>
+  <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="url(#subtle_stroke)" stroke-opacity="0.25"/>
+  <!-- Elegant minimalist star / tech aperture -->
+  <path d="M20 7C20 14.1797 14.1797 20 7 20C14.1797 20 20 25.8203 20 33C20 25.8203 25.8203 20 33 20C25.8203 20 20 14.1797 20 7Z" fill="url(#subtle_star)"/>
+  <circle cx="20" cy="20" r="2.5" fill="#FFFFFF"/>
+  <defs>
+    <linearGradient id="subtle_grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#350AFF"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="subtle_stroke" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#350AFF"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="subtle_star" x1="7" y1="7" x2="33" y2="33" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#350AFF"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+</svg>

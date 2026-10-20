@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        let theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+      function scrollToHash() {
+        if (window.location.hash) {
+          var el = document.querySelector(window.location.hash);
+          if (el) {
+            var top = el.getBoundingClientRect().top + window.pageYOffset - 70;
+            window.scrollTo(0, top);
+          }
+        }
+      }
+      let scrollTries = 0;
+      const scrollTimer = setInterval(function() {
+        scrollToHash();
+        scrollTries++;
+        if (scrollTries > 10) clearInterval(scrollTimer);
+      }, 100);
+    </script>
+    <title>Sidharth P L | Systems Engineer & Founder</title>
+    <meta name="description" content="Portfolio of Sidharth P L - AI & Data Science student at Rajalakshmi Institute of Technology, self-taught systems engineer, founder of Frissco Digital Ventures, and Infosys TechZooka finalist. Experienced in operating systems, cybersecurity tooling, and full-stack product development." />
+    <meta property="og:title" content="Sidharth P L | Systems Engineer & Founder" />
+    <meta property="og:description" content="AI & Data Science student, self-taught systems engineer, founder of Frissco Digital Ventures, and Top 6 Infosys TechZooka finalist." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

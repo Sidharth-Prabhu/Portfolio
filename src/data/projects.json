@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "ShOS",
+      "subtitle": "x86 Operating System from Scratch",
+      "category": "Systems & Kernel",
+      "badge": "Bare Metal",
+      "featured": true,
+      "title": "ShOS - x86 Operating System from Scratch",
+      "description": "Architected a 32-bit x86 operating system from scratch in C and NASM Assembly featuring a Multiboot-compliant bootloader, VGA text driver (80x25), PS/2 keyboard driver, and RAM-based hierarchical filesystem with 20+ built-in shell commands and nano-like editor with save/load support. Tested on QEMU emulator.",
+      "tech": ["C", "NASM Assembly", "QEMU", "x86 Protected Mode", "Makefile"],
+      "github": "https://github.com/Sidharth-Prabhu/ShOS-Shell-Operating-System",
+      "demo": "#shos",
+      "blog": null,
+      "image": null
+    },
+    {
+      "id": 5,
+      "name": "ScopeIntel",
+      "subtitle": "Attack Surface Management Platform",
+      "category": "Cybersecurity & Recon",
+      "badge": "Async Engine",
+      "featured": true,
+      "title": "ScopeIntel - Attack Surface Management Platform",
+      "image": "https://github.com/Sidharth-Prabhu/ScopeIntel/raw/main/screenshots/screenshot2.jpeg",
+      "description": "Enterprise-grade Attack Surface Management platform automating external asset discovery & infrastructure mapping. Engineered an async recon engine using Python semaphores and Nmap, reducing discovery latency by 80%. Features multi-source enumeration, CNAME takeover detection, interactive D3 force graphs, and automated PDF security audit reports.",
+      "tech": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "D3.js", "Nmap"],
+      "github": "https://github.com/Sidharth-Prabhu/ScopeIntel",
+      "blog": "#blog/scopeintel",
+      "demo": null
+    },
+    {
+      "id": 4,
+      "name": "Moves",
+      "subtitle": "Medicine Delivery Platform",
+      "category": "Healthcare E-Commerce",
+      "badge": "Top 6 Finalist",
+      "featured": false,
+      "title": "Moves - Medicine Delivery Platform",
+      "description": "Full-stack quick-commerce medicine delivery application featuring real-time searchable medicine catalog, persistent cart engine, and administrator dispatch portal. Selected as one of 6 national finalists in the Infosys TechZooka Innovation Summit Hackathon 2024.",
+      "tech": ["Node.js", "Express", "MongoDB", "REST APIs", "Tailwind CSS"],
+      "github": "https://github.com/Sidharth-Prabhu",
+      "demo": null,
+      "blog": null,
+      "image": null
+    },
+    {
+      "id": 2,
+      "name": "opSync",
+      "subtitle": "Real-Time Collaborative Editor",
+      "category": "Distributed Systems",
+      "badge": "CRDTs & WebSockets",
+      "featured": false,
+      "title": "opSync - Real-Time Collaborative Editor",
+      "description": "Full-stack real-time collaborative document editor utilizing Conflict-free Replicated Data Types (Yjs) and WebSockets. Implements live multi-user cursor tracking, deterministic conflict resolution, version rollback snapshots, granular RBAC, and integrated chat.",
+      "tech": ["React", "Node.js", "Socket.io", "MongoDB", "Yjs CRDTs", "Zustand"],
+      "github": "https://github.com/Sidharth-Prabhu",
+      "blog": "#blog/opsync-explained",
+      "demo": null,
+      "image": null
+    },
+    {
+      "id": 3,
+      "name": "Campora OSS",
+      "subtitle": "Institution Management Platform",
+      "category": "Open Source",
+      "badge": "Modular Core",
+      "featured": false,
+      "title": "Campora OSS - Institution Management Platform",
+      "description": "Open-source software suite for educational institutions, unifying academic records, attendance workflows, administrative governance, and campus services into an extensible modular platform architecture.",
+      "tech": ["JavaScript", "Dart", "C++", "Cross-Platform"],
+      "github": "https://github.com/Campora-OSS",
+      "blog": "#blog/campora-redesign",
+      "demo": null,
+      "image": null
+    }
+  ]
+}

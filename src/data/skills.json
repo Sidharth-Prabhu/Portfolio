@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "skills": ["Python", "Java", "TypeScript", "JavaScript", "C", "SQL", "NASM Assembly"]
+    },
+    {
+      "name": "Frameworks",
+      "skills": ["React", "FastAPI", "Node.js", "Express", "Socket.io", "Yjs", "D3.js"]
+    },
+    {
+      "name": "Databases & Backend",
+      "skills": ["PostgreSQL", "MongoDB", "REST APIs", "JWT", "WebSockets"]
+    },
+    {
+      "name": "Tools & Platforms",
+      "skills": ["Git", "Linux", "Docker", "QEMU", "PDF Generation", "Security Recon Tooling"]
+    }
+  ]
+}
