@@ -1,0 +1,16 @@
+{
+  "name": "Sidharth P L Portfolio",
+  "short_name": "Sidharth P L",
+  "description": "Systems Engineer, Full-Stack Developer & Founder of Frissco Digital Ventures",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffb74d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
